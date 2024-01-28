@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Out?</title>
+    <style>
+
+        h2 {
+            justify-content: center;
+            display: flex;
+            color: white;
+            font-family: sans-serif;
+            font-size: 40px;
+            margin: 0px;
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+            text-shadow: 1.41px 1.41px black, 2px 0 black, 1.41px -1.41px black,
+            0 -2px black, -1.41px -1.41px black, -2px 0 black,
+            -1.41px 1.41px black, 0 2px black;
+        }
+
+        iframe {
+            border-width: 0px !important;
+        }
+        body {
+            background-color: #ff70c8;
+        }
+
+        .container{
+            position: relative;
+            width: 100%;
+        }
+
+        .iframeContainer {
+            display: flex;
+            justify-content: center;
+        }
+
+        .buttonContainer {
+            display: flex;
+            justify-content: center;
+        }
+
+        .buttonYes {
+            left: 37%;
+            position: absolute;
+            margin: 1rem;
+            color: black;
+            border: 3px solid black;
+            background-color: #ffffff;
+            text-align: center;
+            text-decoration: none;
+            padding: 15px;
+            width: 200px;
+            border-radius: 5px;
+            font-weight: 800;
+        }
+        .buttonNo {
+            left: 50%;
+            position: absolute;
+            margin: 1rem;
+            color: black;
+            border: 3px solid black;
+            background-color: #ffffff;
+            text-align: center;
+            text-decoration: none;
+            padding: 15px;
+            width: 200px;
+            border-radius: 5px;
+            font-weight: 800;
+        }
+
+        @media screen and (min-width: 390px)  {
+            .buttonYes {
+                left: 26%;
+            }
+
+            img {
+                width: 100%;
+            }
+
+        }
+        @media screen and (min-width: 969px)  {
+            .buttonYes {
+                left: 37%;
+            }
+            img {
+                width: auto;
+            }
+        }
+
+    </style>
+</head>
+<body id="body">
+<div class="container">
+
+    <h2>Do you want to go out with me?</h2>
+    <div class="iframeContainer">
+        <img src="catHands.gif" alt="Girl in a jacket" id="imageCat">
+    </div>
+
+    <div class="buttonContainer">
+        <button class="buttonNo" id="btnNo">Oh bitte nicht!</button>
+        <button class="buttonYes" onclick="location.href='https://docs.google.com/forms/d/e/1FAIpQLSfUkqgd1ZlHHk9Ow2vS2762ynYZFaluHE7hIsrv4qfpDCODwA/viewform?usp=sf_link'" id="btnYes">Jaa!</button>
+    </div>
+</div>
+
+<script>
+
+    function openGoogle() {
+        console.log("lsdkjf")
+
+    }
+
+    document.getElementById('btnYes').addEventListener('mousemove', function() {
+        document.getElementById('imageCat').src = "giphasdfy.gif";
+        document.body.style.background = "#ffb5dc"
+    });
+
+    document.getElementById('btnYes').addEventListener('mouseleave', function() {
+        document.getElementById('imageCat').src = "catHands.gif";
+        document.body.style.background = "#ff70c8"
+    });
+
+    const button = document.getElementById('btnNo');
+    button.addEventListener('mouseover', function () {
+        button.style.left = `${Math.ceil(Math.random() * 90)}%`;
+        button.style.top = `${Math.ceil(Math.random() * 90)}%`;
+    });
+    button.addEventListener('click', function () {
+        button.style.left = `${Math.ceil(Math.random() * 90)}%`;
+        button.style.top = `${Math.ceil(Math.random() * 90)}%`;
+    })
+</script>
+</body>
+</html>
