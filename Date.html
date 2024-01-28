@@ -25,6 +25,7 @@
         }
         body {
             background-color: #ff70c8;
+            margin: 0px;
         }
 
         .container{
@@ -42,10 +43,9 @@
             justify-content: center;
         }
 
-        .buttonYes {
-            left: 37%;
+        .buttonYes,
+        .buttonNo {
             position: absolute;
-            margin: 1rem;
             color: black;
             border: 3px solid black;
             background-color: #ffffff;
@@ -56,19 +56,22 @@
             border-radius: 5px;
             font-weight: 800;
         }
+
+        .buttonYes {
+            left: 25%;
+        }
+
         .buttonNo {
             left: 50%;
-            position: absolute;
-            margin: 1rem;
-            color: black;
-            border: 3px solid black;
-            background-color: #ffffff;
-            text-align: center;
-            text-decoration: none;
-            padding: 15px;
-            width: 200px;
-            border-radius: 5px;
-            font-weight: 800;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .buttonYes,
+            .buttonNo {
+                position: relative;
+                left: auto;
+                margin: 1rem 0;
+            }
         }
 
         @media screen and (min-width: 390px)  {
@@ -95,7 +98,7 @@
 <body id="body">
 <div class="container">
 
-    <h2>Do you want to go out with me?</h2>
+    <h2>Do you be my Valentine's Date..?</h2>
     <div class="iframeContainer">
         <img src="catHands.gif" alt="Girl in a jacket" id="imageCat">
     </div>
