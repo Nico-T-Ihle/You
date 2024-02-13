@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Go Out?</title>
+    <title>POOKIE</title>
     <style>
 
         h2 {
@@ -13,11 +13,11 @@
             font-family: sans-serif;
             font-size: 40px;
             margin: 0px;
-            margin-top: 5rem;
-            margin-bottom: 5rem;
+            margin-top: 0rem;
             text-shadow: 1.41px 1.41px black, 2px 0 black, 1.41px -1.41px black,
             0 -2px black, -1.41px -1.41px black, -2px 0 black,
             -1.41px 1.41px black, 0 2px black;
+            text-align: center;
         }
 
         iframe {
@@ -26,6 +26,19 @@
         body {
             background-color: #ff70c8;
             margin: 0px;
+        }
+
+        .buttonContainerNew {
+            text-align: center;
+        }
+
+        .headlineContainer {
+            margin-top: 1rem;
+            padding: 1rem;
+        }
+
+        .firsth2 {
+            margin-bottom: 1rem;
         }
 
         .container{
@@ -40,7 +53,22 @@
 
         .buttonContainer {
             display: flex;
-            justify-content: center;
+            gap: 2rem;
+            justify-content: space-between;
+            margin: 1rem;
+        }
+
+        .buttonNoNew,
+        .buttonYesNew {
+            color: black;
+            border: 3px solid black;
+            background-color: #ffffff;
+            text-align: center;
+            text-decoration: none;
+            padding: 15px;
+            width: 200px;
+            border-radius: 5px;
+            font-weight: 800;
         }
 
         .buttonYes,
@@ -64,23 +92,24 @@
         .buttonNo {
             left: 50%;
         }
-        
+
         @media screen and (max-width: 768px) {
             .buttonYes,
             .buttonNo {
                 position: relative;
                 left: auto;
-                margin: 1rem 0;
             }
         }
 
         @media screen and (min-width: 390px)  {
-            .buttonYes {
-                left: 26%;
-            }
+            .buttonYes {}
 
             img {
                 width: 100%;
+            }
+
+            .buttonNoNew {
+                margin-bottom: 1rem;
             }
 
         }
@@ -97,24 +126,38 @@
 </head>
 <body id="body">
 <div class="container">
+<div class="headlineContainer">
+    <h2 class="firsth2">WILL YOU BE MY VALENTINE </h2>
+    <h2>MY POOKIE WOOKIE SNOOKIE COOKIE</h2>
+</div>
 
-    <h2>Do you be my Valentine's Date..?</h2>
     <div class="iframeContainer">
         <img src="catHands.gif" alt="Girl in a jacket" id="imageCat">
     </div>
 
-    <div class="buttonContainer">
-        <button class="buttonNo" id="btnNo">Oh bitte nicht!</button>
-        <button class="buttonYes" onclick="location.href='https://docs.google.com/forms/d/e/1FAIpQLSfUkqgd1ZlHHk9Ow2vS2762ynYZFaluHE7hIsrv4qfpDCODwA/viewform?usp=sf_link'" id="btnYes">Jaa!</button>
+<!--    <div class="buttonContainer">-->
+<!--        <button class="buttonNo" id="btnNo">Oh bitte nicht!</button>-->
+<!--        <button class="buttonYes" onclick="location.href='https://docs.google.com/forms/d/e/1FAIpQLSfUkqgd1ZlHHk9Ow2vS2762ynYZFaluHE7hIsrv4qfpDCODwA/viewform?usp=sf_link'" id="btnYes">Jaa!</button>-->
+<!--    </div>-->
+
+    <div class="buttonContainerNew">
+        <button class="buttonNoNew" id="buttonNoNew">Oh bitte nicht!</button>
+        <button class="buttonYesNew" onclick="location.href='https://docs.google.com/forms/d/e/1FAIpQLSfUkqgd1ZlHHk9Ow2vS2762ynYZFaluHE7hIsrv4qfpDCODwA/viewform?usp=sf_link'" id="btnYesNew">Jaa!</button>
     </div>
 </div>
 
 <script>
+    document.getElementById('buttonNoNew').addEventListener('click', function () {
+        console.log("D: my heart </3>")
+        var btnYes = document.getElementById('btnYesNew');
+        var currentHeight = btnYes.offsetHeight;
+        var currentWidth = btnYes.offsetWidth;
+        var newWidth = currentWidth + 20;
+        var newHeight = currentHeight + 20;
+        btnYes.style.width = newWidth + 'px';
+        btnYes.style.height = newHeight + 'px';
+    });
 
-    function openGoogle() {
-        console.log("lsdkjf")
-
-    }
 
     document.getElementById('btnYes').addEventListener('mousemove', function() {
         document.getElementById('imageCat').src = "giphasdfy.gif";
